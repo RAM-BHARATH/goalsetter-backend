@@ -44,7 +44,8 @@ const updateGoal = asyncHandler(async (req, res) => {
         throw new Error('Goal Not Found')
     }
 
-    const user = await User.findById(req.user.id)
+    // const user = await User.findById(req.user.id)
+    const user = req.user
 
     //Check for user
     if(!user){
@@ -73,7 +74,8 @@ const deleteGoal = asyncHandler(async (req, res) => {
         throw new Error('Goal not found')
     }
 
-    const user = await User.findById(req.user.id)
+    // const user = await User.findById(req.user.id)
+    const user = req.user
 
     //Check for user
     if(!user){
