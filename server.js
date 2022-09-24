@@ -3,6 +3,7 @@ const colors = require('colors')
 const dotenv = require('dotenv').config()
 const connectDB = require('./config/db')
 const port = process.env.PORT || 5000
+const cors = require('cors')
 
 connectDB();
 
@@ -15,6 +16,11 @@ const app = express()
 
 app.use(express.json())
 app.use(express.urlencoded({ extended:false }))
+
+app.use(cors({
+    origin: 'https://goalsetter-frontend.netlify.app/',
+    optionsSuccessStatus: 200
+}))
 
 app.use('/api/goals', goal_routes);
 app.use('/api/users', user_routes);
