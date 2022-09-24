@@ -17,9 +17,9 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended:false }))
 
-app.use(cors({
+app.use('/api/*',cors({
     origin: 'https://goalsetter-frontend.netlify.app',
-    optionsSuccessStatus: 200
+    optionsSuccessStatus: 204
 }))
 
 app.use('/api/goals', goal_routes);
