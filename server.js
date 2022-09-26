@@ -29,7 +29,6 @@ app.use(express.urlencoded({ extended:false }))
     
 // }))
 
-
 app.use('/api/goals', goal_routes);
 app.use('/api/users', user_routes);
 
