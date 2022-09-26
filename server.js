@@ -16,9 +16,7 @@ const app = express()
 
 
 
-app.options('*',cors({
-    origin: 'https://goalsetter-frontend.netlify.app'
-}))
+app.options('*',cors())
 
 app.use(express.json())
 app.use(express.urlencoded({ extended:false }))
